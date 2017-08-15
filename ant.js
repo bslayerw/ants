@@ -17,7 +17,6 @@ class Ant {
   rotate(direction = 1) {
     this.headingIndex = (this.headingIndex + direction) % HEADINGS.length;
     if (this.headingIndex < 0) {
-      console.log(`wrapping, less than 0  = ${this.headingIndex}`);
       this.headingIndex = HEADINGS.length - 1;
     }
     this.heading = HEADINGS[this.headingIndex];
