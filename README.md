@@ -6,7 +6,9 @@ npm install
 # or yarn install
 ```
 ```sh
-npm run test
+npm run test:windows
+# test on unix
+# npm run test
 # or yarn test
 ```
 ```sh
