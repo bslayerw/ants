@@ -8,6 +8,20 @@ class Ant {
     this.grid = grid;
     this.heading = heading;
     this.headingIndex = HEADINGS.indexOf(this.heading);
+    this.headingOperators = {
+      N: object => {
+        object.y -= 1;
+      },
+      E: object => {
+        object.x += 1;
+      },
+      S: object => {
+        object.y += 1;
+      },
+      W: object => {
+        object.x -= 1;
+      }
+    };
   }
   rotate(direction = 1) {
     this.headingIndex = (this.headingIndex + direction) % HEADINGS.length;
@@ -45,21 +59,11 @@ class Ant {
 
   moveForward() {
     this.toggleOccupied();
-    switch (this.heading) {
-      case "E":
-        this.coord.x += 1;
-        break;
-      case "W":
-        this.coord.x -= 1;
-        break;
-      case "N":
-        this.coord.y -= 1;
-        break;
-      case "S":
-        this.coord.y += 1;
-        break;
-      default:
-        console.error(`unknown heading ${this.heading}`);
+    const op = this.headingOperators[this.heading];
+    if (op) {
+      op(this.coord);
+    } else {
+      console.error(`unknown heading ${this.heading}`);
     }
     return this;
   }
