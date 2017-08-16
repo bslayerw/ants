@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "jest": "^20.0.4"
-  }
+  },
+  "dependencies": {}
 }
