@@ -1,5 +1,5 @@
 # ants
-
+[![Coverage Status](https://coveralls.io/repos/github/bslayerw/ants/badge.svg?branch=master)](https://coveralls.io/github/bslayerw/ants?branch=master)
 ## Setup
 ```sh
 npm install
