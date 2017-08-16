@@ -1,7 +1,3 @@
-const HEADING_N = 0;
-const HEADING_E = 1;
-const HEADING_S = 2;
-const HEADING_w = 3;
 const HEADINGS = ["N", "E", "S", "W"];
 class Ant {
   constructor(grid, heading = "N") {
@@ -10,7 +6,6 @@ class Ant {
       y: 2
     };
     this.grid = grid;
-
     this.heading = heading;
     this.headingIndex = HEADINGS.indexOf(this.heading);
   }
